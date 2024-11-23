@@ -17,6 +17,6 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("Release")]
 #endif
 [assembly: AssemblyCompany("Danila Korablin")]
-[assembly: AssemblyProduct("Plugin.Tray")]
+[assembly: AssemblyProduct("Plugin.SystemTray")]
 [assembly: AssemblyCopyright("Copyright © Danila Korablin 2012")]
 #endif

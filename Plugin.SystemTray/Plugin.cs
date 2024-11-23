@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Windows.Forms;
 using SAL.Flatbed;
 
-namespace Plugin.Tray
+namespace Plugin.SystemTray
 {
 	public class PluginWindows : IPlugin
 	{

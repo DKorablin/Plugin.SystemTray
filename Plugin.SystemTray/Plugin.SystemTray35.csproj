@@ -10,8 +10,8 @@
     <ProjectGuid>{2A871428-94CA-4AC4-A5D1-67BDAFA70D5D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Plugin.Tray</RootNamespace>
-    <AssemblyName>Plugin.Tray</AssemblyName>
+    <RootNamespace>Plugin.SystemTray</RootNamespace>
+    <AssemblyName>Plugin.SystemTray</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
