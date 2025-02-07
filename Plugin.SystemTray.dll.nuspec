@@ -10,7 +10,6 @@
 		<projectUrl>https://dkorablin.ru/project/Default.aspx?File=94</projectUrl>
 		<repository type="git" url="https://github.com/DKorablin/Plugin.SystemTray" />
 		<description>Plugin to add application to the system tray on collapse</description>
-		<releaseNotes></releaseNotes>
 		<copyright>Danila Korablin</copyright>
 		<tags>SAL,Plugin</tags>
 		<dependencies>
