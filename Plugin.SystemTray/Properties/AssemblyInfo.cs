@@ -8,8 +8,6 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyMetadata("ProjectUrl", "https://dkorablin.ru/project/Default.aspx?File=94")]
 #else
 
-[assembly: AssemblyTitle("Plugin.SystemTray")]
 [assembly: AssemblyDescription("Add application to the system tray when host is collapsed")]
-[assembly: AssemblyProduct("Plugin.SystemTray")]
 [assembly: AssemblyCopyright("Copyright © Danila Korablin 2012-2025")]
 #endif
