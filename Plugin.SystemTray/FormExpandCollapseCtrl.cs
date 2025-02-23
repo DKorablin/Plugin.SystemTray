@@ -62,9 +62,7 @@ namespace Plugin.SystemTray
 				throw new InvalidOperationException($"{this._plugin} requires MainWindowHandle and Windows environment");
 
 			if(this._plugin.Settings.Enable)
-			{
 				this.CreateIcon();
-			}
 		}
 
 		public void RemoveIcon()

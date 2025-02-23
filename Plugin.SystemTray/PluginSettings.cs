@@ -14,7 +14,7 @@ namespace Plugin.SystemTray
 		public Boolean Enable
 		{
 			get => this._isEnabled;
-			set => this.SetField(ref this._isEnabled, value, nameof(Enable));
+			set => this.SetField(ref this._isEnabled, value, nameof(this.Enable));
 		}
 
 		#region INotifyPropertyChanged
