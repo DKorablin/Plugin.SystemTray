@@ -9,8 +9,8 @@ namespace Plugin.SystemTray
 		private readonly PluginWindows _plugin;
 		private NotifyIcon _icon;
 		private Form _form;
-		private MenuItem _menuMinimize;
-		private MenuItem _menuRestore;
+		private ToolStripMenuItem _menuMinimize;
+		private ToolStripMenuItem _menuRestore;
 
 		private Form MainForm
 		{
@@ -40,15 +40,15 @@ namespace Plugin.SystemTray
 					this._icon.DoubleClick += new EventHandler(this.icon_DoubleClick);
 					this._icon.Visible = true;
 
-					ContextMenu menu = new ContextMenu();
-					this._menuMinimize = new MenuItem("Minimize");
-					this._menuRestore = new MenuItem("Restore");
-					menu.MenuItems.AddRange(new MenuItem[] { this._menuMinimize, this._menuRestore, });
+					ContextMenuStrip menu = new ContextMenuStrip();
+					this._menuMinimize = new ToolStripMenuItem("Minimize");
+					this._menuRestore = new ToolStripMenuItem("Restore");
+					menu.Items.AddRange(new ToolStripMenuItem[] { this._menuMinimize, this._menuRestore, });
 
 					this._menuRestore.Click += new EventHandler(this.menuItem_Click);
 					this._menuMinimize.Click += new EventHandler(this.menuItem_Click);
-					menu.Popup += new EventHandler(menu_Popup);
-					this._icon.ContextMenu = menu;
+					menu.Opening += this.Menu_Opening;
+					this._icon.ContextMenuStrip = menu;
 				}
 				return this._icon;
 			}
@@ -121,18 +121,18 @@ namespace Plugin.SystemTray
 			}
 		}
 
-		private void menu_Popup(Object sender, EventArgs e)
+		private void Menu_Opening(Object sender, System.ComponentModel.CancelEventArgs e)
 		{
 			switch(this.MainForm.WindowState)
 			{
 			case FormWindowState.Minimized:
-				this.Icon.ContextMenu.MenuItems[0].Enabled = false;
-				this.Icon.ContextMenu.MenuItems[1].Enabled = true;
+				this._menuMinimize.Enabled = false;
+				this._menuRestore.Enabled = true;
 				break;
 			case FormWindowState.Maximized:
 			case FormWindowState.Normal:
-				this.Icon.ContextMenu.MenuItems[0].Enabled = true;
-				this.Icon.ContextMenu.MenuItems[1].Enabled = false;
+				this._menuMinimize.Enabled = true;
+				this._menuRestore.Enabled = false;
 				break;
 			}
 		}
