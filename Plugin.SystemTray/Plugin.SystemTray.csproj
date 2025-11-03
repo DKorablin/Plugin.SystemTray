@@ -11,7 +11,6 @@
 		<GenerateDocumentationFile>False</GenerateDocumentationFile>
 		<CopyLocalLockFileAssemblies>True</CopyLocalLockFileAssemblies>
 		<NoWarn>CA1416</NoWarn>
-	<DefineConstants>WIN</DefineConstants>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)'=='Release'">
