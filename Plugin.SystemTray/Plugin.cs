@@ -7,7 +7,6 @@ namespace Plugin.SystemTray
 	public class PluginWindows : IPlugin, IPluginSettings<PluginSettings>
 	{
 		private PluginSettings _settings;
-		private TraceSource _trace;
 		private FormExpandCollapseCtrl _ctrl;
 
 		internal IHost Host { get; }
@@ -30,10 +29,13 @@ namespace Plugin.SystemTray
 			}
 		}
 
-		internal TraceSource Trace => this._trace ?? (this._trace = PluginWindows.CreateTraceSource<PluginWindows>());
+		internal ITraceSource Trace { get; }
 
-		public PluginWindows(IHost host)
-			=> this.Host = host ?? throw new ArgumentNullException(nameof(host));
+		public PluginWindows(IHost host, ITraceSource trace)
+		{
+			this.Host = host ?? throw new ArgumentNullException(nameof(host));
+			this.Trace = trace ?? throw new ArgumentNullException(nameof(trace));
+		}
 
 		private void Settings_PropertyChanged(Object sender, System.ComponentModel.PropertyChangedEventArgs e)
 		{
@@ -73,15 +75,6 @@ namespace Plugin.SystemTray
 				break;
 			}
 			return true;
-		}
-
-		private static TraceSource CreateTraceSource<T>(String name = null) where T : IPlugin
-		{
-			TraceSource result = new TraceSource(typeof(T).Assembly.GetName().Name + name);
-			result.Switch.Level = SourceLevels.All;
-			result.Listeners.Remove("Default");
-			result.Listeners.AddRange(System.Diagnostics.Trace.Listeners);
-			return result;
 		}
 	}
 }

@@ -5,4 +5,3 @@ using System.Runtime.InteropServices;
 [assembly: System.CLSCompliant(true)]
 
 [assembly: AssemblyDescription("Add application to the system tray when host is collapsed")]
-[assembly: AssemblyCopyright("Copyright © Danila Korablin 2012-2025")]
